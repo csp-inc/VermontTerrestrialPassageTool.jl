@@ -31,6 +31,6 @@ The INI file should have an entry for each of the following:
 Once you have installed this package and have an INI file created, to use this package simply run:
 ```julia
 julia> using VermontTerrestrialPassageTool
-julia> solve_all_culverts("<file path to your INI file>")
+julia> compute_all_culverts("<file path to your INI file>")
 ```
 Replace `<file path to your INI file>` with the file path to your INI file.
