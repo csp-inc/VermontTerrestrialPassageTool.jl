@@ -1,3 +1,10 @@
+"""
+    compute_all_culverts(path::String)
+
+Parameters:
+
+**`path`**: The file path to an INI file containing run parameters
+"""
 function compute_all_culverts(path::String)
     ## Parse INI Arguments
     cfg = Omniscape.parse_cfg(path)
