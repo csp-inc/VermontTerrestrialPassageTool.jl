@@ -27,6 +27,8 @@ The INI file should have an entry for each of the following:
 - `summary_radius_pixels` - The radius **in pixels** to use for summarizing connectivity around culverts. For example, `summary_radius_pixels` of 100 will result in summaries being reported for current within 100 pixels of the structure.
 - `output_folder` - The file path specifying the path for a new folder where outputs should be written. Inside this folder will be a file called results.summary.csv containing summaries for current flow around each culvert. `compute_all_culverts()` will also create a new folder inside of `output_folder` for each culvert and save current maps there.
 
+Note that all file paths should be relative to the working directory of your Julia session.
+
 ### Example
 #### Example INI file:
 ```ini
