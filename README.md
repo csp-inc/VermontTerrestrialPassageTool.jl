@@ -11,7 +11,7 @@ julia> using Pkg; Pkg.add(PackageSpec(url = "https://github.com/csp-inc/VermontT
 
 This package provides one user-facing function, `compute_all_culverts()`. It has one parameter (argument) that specifies the file path for an INI file that contains run options.
 
-### The INI File
+### The INI file
 The INI file should have an entry for each of the following:
 
 - `culvert_shapefile_path` - The file path for the shapefile containing culverts.
@@ -28,6 +28,32 @@ The INI file should have an entry for each of the following:
 - `output_folder` - The file path specifying the path for a new folder where outputs should be written. Inside this folder will be a file called results.summary.csv containing summaries for current flow around each culvert. `compute_all_culverts()` will also create a new folder inside of `output_folder` for each culvert and save current maps there.
 
 ### Example
+#### Example INI file:
+```ini
+[Culvert Options]
+culvert_id_field = TNC_Join_I
+culvert_shapefile_path = ../data/source/culverts/vt_culverts_bridges_statefed_3ft_AI091720_vt_utm.shp
+culvert_ids_path = test_culvert_ids.csv
+
+[Raster inputs]
+landcover_path = ../data/source/LandLandcov_BaseLC2016/LandLandcov_BaseLC2016.tif
+source_strength_path = ../data/source/marten/MartenOccVT30.tif
+
+[Omniscape options]
+os_radius_pixels = 200
+os_source_threshold = 0.85
+os_block_size = 31
+reclass_table_path = reclass_table.txt
+
+[Run options]
+mask_values = [1]
+summary_radius_pixels = 100
+
+[Output options]
+output_folder = output/testrun
+
+```
+#### Using the package
 Once you have installed this package and have an INI file created, to use this package simply run:
 ```julia
 julia> using VermontTerrestrialPassageTool
