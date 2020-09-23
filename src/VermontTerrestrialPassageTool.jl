@@ -11,4 +11,6 @@ include("utils.jl")
 include("main.jl")
 include("consts.jl")
 
+export compute_all_culverts
+
 end
