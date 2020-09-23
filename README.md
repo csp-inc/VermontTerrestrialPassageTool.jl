@@ -1,6 +1,6 @@
 # VermontTerrestrialPassageTool.jl
 
-Compute and summarize connectivity around road culverts in Vermont. This package was built under an assumption that spatial data will have projections with units of meters. **All input data should be in the same projection to guarantee functionality**.
+Compute and summarize connectivity around road culverts in Vermont. This package was built under an assumption that spatial data will have projections with units of meters. **All input data should be in the same projection to guarantee functionality**. You will need Julia 1.5 or higher to use this package.
 
 ## Installation
 ```julia
