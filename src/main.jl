@@ -11,7 +11,7 @@ function compute_all_culverts(path::String)
 
     culvert_id_field = Symbol(cfg["culvert_id_field"])
     culvert_shapefile_path = cfg["culvert_shapefile_path"]
-    culvert_ids = readdlm(cfg["culvert_ids_path"])
+    culvert_ids = string.(readdlm(cfg["culvert_ids_path"]))
     landcover_path = cfg["landcover_path"]
     os_radius_pixels = parse(Int, cfg["os_radius_pixels"])
     summary_radius_pixels = parse(Int, cfg["summary_radius_pixels"])
@@ -27,7 +27,7 @@ function compute_all_culverts(path::String)
     side_length_meters = (os_radius_pixels + summary_radius_pixels) * input_resolution * 2
 
     ## Check that all ids in culvert_ids are in the shapefile
-    culvert_shapefile_ids = getproperty(Shapefile.Table(culvert_shapefile_path), culvert_id_field)
+    culvert_shapefile_ids = string.(getproperty(Shapefile.Table(culvert_shapefile_path), culvert_id_field))
     bad_ids = culvert_ids[(!).(map(x -> in(x, culvert_shapefile_ids), culvert_ids))]
     if !isempty(bad_ids)
         @warn("The following user-provided culvert IDs are missing from the culverts shapefile and will be skipped.")
@@ -35,6 +35,7 @@ function compute_all_culverts(path::String)
         for c in 1:length(bad_ids)
             print(string(bad_ids[c], "  "))
         end
+        culvert_ids = culvert_ids[map(x -> in(x, culvert_shapefile_ids), culvert_ids)]
     end
 
     ## Setup output file structure and write empty file to store metadata
