@@ -42,7 +42,7 @@ function compute_all_culverts(path::String)
     # Create directory
     dir_suffix = 2
     while isdir(string(output_folder, "_$(dir_suffix)"))
-        global dir_suffix+=1
+        dir_suffix+=1
     end
     if isdir(output_folder)
         @warn string("A folder already exists at $(output_folder).",
