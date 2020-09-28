@@ -11,7 +11,7 @@ function compute_all_culverts(path::String)
 
     culvert_id_field = Symbol(cfg["culvert_id_field"])
     culvert_shapefile_path = cfg["culvert_shapefile_path"]
-    culvert_ids = string.(readdlm(cfg["culvert_ids_path"]))
+    culvert_ids = readdlm(cfg["culvert_ids_path"], ',', String)
     landcover_path = cfg["landcover_path"]
     os_radius_pixels = parse(Int, cfg["os_radius_pixels"])
     summary_radius_pixels = parse(Int, cfg["summary_radius_pixels"])
