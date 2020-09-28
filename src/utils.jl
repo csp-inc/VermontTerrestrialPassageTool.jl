@@ -212,7 +212,7 @@ function compute_connectivity(culvert_shapefile_path::String,
     # Mask source strength with landcover, and give source strength a missing val where
     # landcover is missing
     source_strength[(!).(coalesce.(map(x -> in(x, mask_values), landcover), true))] .= missing
-
+    source_strength[ismissing.(landcover)] .= missing
     # Grab wkt
     wkt = crs(landcover_ga).val
 
