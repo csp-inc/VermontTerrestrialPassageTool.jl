@@ -13,7 +13,7 @@ Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 
 [compat]
 ArchGDAL = "<1.0"
-GeoData = "0.2"
+GeoData = "0.3"
 Omniscape = "0.4.1"
 Shapefile = "0.6"
 julia = "1.5"
