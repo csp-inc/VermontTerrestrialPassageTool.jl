@@ -83,6 +83,7 @@ function compute_all_culverts(path::String)
     os_args["source_threshold"] = string(os_source_threshold)
     os_args["source_from_resistance"] = "false"
     os_args["reclassify_resistance"] = "true"
+    os_args["solver"] = cfg["solver"]
     reclass_table = Omniscape.read_reclass_table(reclass_table_path, Float64)
 
     total_solves = length(culvert_ids)

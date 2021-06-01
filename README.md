@@ -24,6 +24,7 @@ The INI file should have an entry for each of the following:
 - `os_radius_pixels` - This argument is passed as the `radius` argument to Omniscape.jl. See `radius` in the Omniscape.jl docs under [Arguments](https://docs.circuitscape.org/Omniscape.jl/stable/usage/#Arguments) for more info.
 - `os_source_threshold` - This argument is passed as the `source_threshold` argument to Omniscape.jl. See `source_threshold` in the Omniscape.jl docs under [Arguments](https://docs.circuitscape.org/Omniscape.jl/stable/usage/#Arguments) for more info.
 - `os_block_size` - This argument is passed as the `block_size` argument to Omniscape.jl. See `block_size` in the Omniscape.jl docs under [Arguments](https://docs.circuitscape.org/Omniscape.jl/stable/usage/#Arguments) for more info.
+- `solver` - The Circuitscape solver to use. See `solver` in the Omniscape.jl docs under [Arguments](https://docs.circuitscape.org/Omniscape.jl/stable/usage/#Arguments) for more info.
 - `summary_radius_pixels` - The radius **in pixels** to use for summarizing connectivity around culverts. For example, `summary_radius_pixels` of 100 will result in summaries being reported for current within 100 pixels of the structure.
 - `output_folder` - The file path specifying the path for a new folder where outputs should be written. Inside this folder will be a file called results.summary.csv containing summaries for current flow around each culvert. `compute_all_culverts()` will also create a new folder inside of `output_folder` for each culvert and save current maps there.
 
