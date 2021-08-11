@@ -128,6 +128,7 @@ function compute_all_culverts(path::String)
               writedlm(io, row_values, ",")
             end
         catch e
+            error_message = sprint(showerror, e, catch_backtrace())
             @warn "Solve failed for culvert with ID $(culvert_ids[i]). Skipping."
 
             # Keep track of failed structures and their error messages
@@ -138,7 +139,6 @@ function compute_all_culverts(path::String)
                 end
             end
 
-            error_message = sprint(showerror, e, stacktrace())
             open(string(output_folder, "/failed_structures.csv"), "a") do f
               writedlm(f, [culvert_ids[i] String(error_message)], ",")
             end
