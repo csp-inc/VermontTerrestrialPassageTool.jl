@@ -14,7 +14,7 @@ This package provides one user-facing function, `compute_all_culverts()`. It has
 ### The INI file
 The INI file should have an entry for each of the following:
 
-- `culvert_shapefile_path` - The file path for the shapefile containing culverts.
+- `culvert_shapefile_path` - The file path for the shapefile containing culverts. This shapefile must contain only single part point geometries (e.g. Point, and not MultiPoint geometry types).
 - `culvert_id_field` - The field the culverts shapefile that contains unique IDs for each structure
 - `culvert_ids_path` - The file path to a one-column CSV file (with no column names/headers) with entries specifying the IDs of the culverts for which the analysis should be run (e.g. unique IDs corresponding to the values in `culvert_id_field` in the culverts shapefile.
 - `landcover_path` - The file path to the landcover raster to be used for generating resistance surfaces and masking source strength surfaces

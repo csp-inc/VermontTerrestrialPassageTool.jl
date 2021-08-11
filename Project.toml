@@ -1,7 +1,7 @@
 name = "VermontTerrestrialPassageTool"
 uuid = "50a0e021-069b-4ca0-9a5b-cb10b734a714"
 authors = ["Vincent A. Landau"]
-version = "0.0.2"
+version = "0.0.3"
 
 [deps]
 ArchGDAL = "c9ce4bd3-c3d5-55b8-8973-c0e20141b8c3"
